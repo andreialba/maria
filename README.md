@@ -3,9 +3,7 @@
 [![Astro 6](https://img.shields.io/badge/Astro-6-FF5D01?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build/)
 [![Tailwind CSS 4](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Configured-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![MDX](https://img.shields.io/badge/MDX-Enabled-1B1F24?style=for-the-badge&logo=mdx&logoColor=white)](https://mdxjs.com/)
-[![Vercel Ready](https://img.shields.io/badge/Vercel-Ready-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
-[![Netlify Ready](https://img.shields.io/badge/Netlify-Ready-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://www.netlify.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-84cc16?style=for-the-badge)](./LICENSE)
 
 **Preview:** [alba-mocha-iota.vercel.app](https://alba-mocha-iota.vercel.app/)
 
@@ -130,6 +128,10 @@ Included config:
 
 - [netlify.toml](./netlify.toml)
 - [vercel.json](./vercel.json)
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
 
 ## Notes
 
