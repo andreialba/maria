@@ -11,7 +11,18 @@
   --mcc-accent: var(--foreground);
   --mcc-accent-contrast: var(--background);
   --mcc-positive: #178b54;
+  --mcc-toggle-off-bg: #d1d1d1;
+  --mcc-toggle-off-border: #b7b7b7;
+  --mcc-toggle-on-bg: var(--mcc-text);
+  --mcc-toggle-thumb: #ffffff;
   font-family: inherit;
+}
+
+:root[data-theme='dark'] .mcc-overlay {
+  --mcc-toggle-off-bg: #6b7280;
+  --mcc-toggle-off-border: #7c8594;
+  --mcc-toggle-on-bg: #ffffff;
+  --mcc-toggle-thumb: #111111;
 }
 
 .mcc-banner {
@@ -287,32 +298,33 @@
   height: 1.75rem;
   position: relative;
   padding: 0;
-  border: 1px solid var(--mcc-border);
+  border: 1px solid var(--mcc-toggle-off-border);
   border-radius: 999px;
-  background: var(--mcc-soft);
+  background: var(--mcc-toggle-off-bg);
   cursor: pointer;
   transition: background-color 120ms ease, border-color 120ms ease;
 }
 
 .mcc-toggle[aria-checked='true'] {
-  background: var(--mcc-text);
-  border-color: var(--mcc-text);
+  background: var(--mcc-toggle-on-bg);
+  border-color: var(--mcc-toggle-on-bg);
 }
 
 .mcc-toggle-thumb {
   position: absolute;
-  top: 2px;
+  top: 50%;
   left: 2px;
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  transform: translateY(-50%);
   border-radius: 50%;
-  background: var(--background);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
-  transition: left 120ms ease;
+  background: var(--mcc-toggle-thumb);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+  transition: left 120ms ease, transform 120ms ease;
 }
 
 .mcc-toggle[aria-checked='true'] .mcc-toggle-thumb {
-  left: 1.45rem;
+  left: calc(100% - 1.2rem - 2px);
 }
 
 .footer-cookie-btn {
