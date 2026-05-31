@@ -19,8 +19,10 @@ It includes:
 - a sample case study page
 - About and Resume pages
 - light and dark mode with a persistent header icon toggle
+- cookie consent banner with saved preferences and a footer re-open action
 - self-hosted tool logos on the Resume page
 - Privacy, Terms, and 404 pages
+- a dedicated Cookie Policy page
 - shared header/footer/navigation
 - Astro-optimized responsive portfolio images
 - MDX support
@@ -93,6 +95,68 @@ Main SEO files:
 - [src/pages/robots.txt.ts](./src/pages/robots.txt.ts)
 - [public/og-image.svg](./public/og-image.svg)
 
+## Cookies and Consent
+
+The theme includes a client-side cookie consent system with:
+
+- a bottom banner for first visit consent
+- a preferences modal with essential, analytics, and marketing categories
+- saved consent in `localStorage` under `maria-cookie-consent`
+- a footer `Cookie Preferences` button for reopening the modal
+- a `Cookies` policy page at `/cookies`
+
+The theme also saves the visitor's color theme in `localStorage` under `maria-theme`.
+
+### How consent works
+
+- Essential storage is always active because it remembers theme and consent choices.
+- Analytics and marketing are optional categories and default to off until the visitor opts in.
+- The consent UI works out of the box even if you have not connected analytics or marketing tools yet.
+
+### Client API
+
+The consent script exposes `window.mariaCookieConsent` in the browser:
+
+```js
+window.mariaCookieConsent.getConsent();
+window.mariaCookieConsent.hasConsent();
+window.mariaCookieConsent.canUse('analytics');
+window.mariaCookieConsent.canUse('marketing');
+window.mariaCookieConsent.openPreferences();
+```
+
+Whenever a visitor updates their preferences, the site dispatches:
+
+```js
+window.addEventListener('maria:cookieConsentChanged', (event) => {
+  console.log(event.detail);
+});
+```
+
+### Hooking in analytics or marketing scripts
+
+Only load optional third-party scripts after checking consent. Example:
+
+```html
+<script>
+  if (window.mariaCookieConsent?.canUse('analytics')) {
+    // load your analytics script here
+  }
+
+  window.addEventListener('maria:cookieConsentChanged', (event) => {
+    if (event.detail.analytics) {
+      // load or re-enable analytics here
+    }
+  });
+</script>
+```
+
+If you add a new provider, also update:
+
+- [src/pages/cookies.astro](./src/pages/cookies.astro)
+- [src/pages/privacy.astro](./src/pages/privacy.astro)
+- banner/modal copy in [public/cookie-consent.js](./public/cookie-consent.js)
+
 ## Content and Pages
 
 Theme behavior:
@@ -109,6 +173,7 @@ Main pages:
 - `/work`
 - `/work/nextpoint`
 - `/privacy`
+- `/cookies`
 - `/terms`
 - `/404`
 
@@ -127,6 +192,7 @@ Notes:
 - Portfolio and case study screenshots use Astro's image pipeline for responsive optimized output.
 - Tool logos are self-hosted SVGs.
 - `public/` is reserved for files that should be served as-is, such as favicons and the Open Graph image.
+- Cookie consent assets live in [public/cookie-consent.js](./public/cookie-consent.js) and [public/cookie-consent.css](./public/cookie-consent.css).
 
 There is also a starter MDX content example in:
 

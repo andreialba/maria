@@ -63,6 +63,7 @@ const schemaData =
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImageUrl} />
 		<title>{title}</title>
+		<link rel="stylesheet" href="/cookie-consent.css" />
 		<script type="application/ld+json" set:html={JSON.stringify(schemaData)}></script>
 		<script is:inline>
 			(() => {
@@ -79,6 +80,7 @@ const schemaData =
 	<body>
 		<slot />
 		<SiteFooter showCta={showFooterCta} />
+		<script src="/cookie-consent.js" defer></script>
 		<script is:inline>
 			(() => {
 				const storageKey = 'maria-theme';

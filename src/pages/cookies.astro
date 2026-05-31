@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+---
+
+<Layout
+	title="Cookie Policy | Maria"
+	description="Cookie policy and consent settings for the Maria Astro portfolio theme."
+	showFooterCta={false}
+	noindex={true}
+>
+	<a class="skip-link" href="#main-content">Skip to content</a>
+
+	<div class="legal-page">
+		<SiteHeader />
+
+		<main id="main-content" class="legal-main">
+			<header class="legal-header">
+				<h1>Cookie Policy</h1>
+				<p class="legal-intro">
+					This page explains what the Maria theme stores in the browser, how visitor consent is
+					saved, and how optional categories like analytics or marketing should be handled.
+				</p>
+				<p class="legal-updated">Last updated: May 31, 2026</p>
+			</header>
+
+			<article class="legal-content">
+				<section>
+					<h2>What This Theme Stores</h2>
+					<p>
+						By default, the theme stores two small browser-based preference records on the
+						visitor's device: the selected color theme and the cookie consent preferences.
+					</p>
+					<p>
+						These values are saved in <code>localStorage</code>, not sent automatically with each
+						page request, and are used only to remember visitor choices in the current browser.
+					</p>
+				</section>
+
+				<section>
+					<h2>Consent Categories</h2>
+					<p>
+						The consent interface includes an always-active essential category plus optional
+						analytics and marketing categories.
+					</p>
+					<p>
+						In the Maria theme, analytics and marketing are placeholders until you connect real
+						tools. The banner and modal still work now, so those tools can be gated behind
+						consent when you add them later.
+					</p>
+				</section>
+
+				<section>
+					<h2>Stored Keys</h2>
+					<div class="cookie-records">
+						<article class="cookie-record">
+							<div class="cookie-record-top">
+								<div>
+									<h3><code>maria-theme</code></h3>
+									<p class="cookie-record-label">Local storage</p>
+								</div>
+								<span class="cookie-badge">Essential</span>
+							</div>
+							<p>
+								Stores whether the visitor last selected light mode or dark mode.
+							</p>
+						</article>
+
+						<article class="cookie-record">
+							<div class="cookie-record-top">
+								<div>
+									<h3><code>maria-cookie-consent</code></h3>
+									<p class="cookie-record-label">Local storage</p>
+								</div>
+								<span class="cookie-badge">Essential</span>
+							</div>
+							<p>
+								Stores the visitor's consent version, timestamp, and optional analytics /
+								marketing choices for this browser.
+							</p>
+						</article>
+					</div>
+				</section>
+
+				<section>
+					<h2>How to Change Preferences</h2>
+					<p>
+						Visitors can reopen the preferences modal any time from the footer's
+						<strong> Cookie Preferences</strong> button.
+					</p>
+					<p>
+						You can also
+						<a
+							href="#"
+							class="cookie-inline-link"
+							onclick="window.dispatchEvent(new CustomEvent('maria:openCookieConsent')); return false;"
+						>
+							open the cookie preferences modal here
+						</a>.
+					</p>
+				</section>
+
+				<section>
+					<h2>Using Consent in Custom Scripts</h2>
+					<p>
+						The theme exposes <code>window.mariaCookieConsent</code> so optional scripts can
+						check whether analytics or marketing is allowed before loading.
+					</p>
+					<p>
+						It also emits a <code>maria:cookieConsentChanged</code> browser event whenever the
+						visitor saves new choices.
+					</p>
+				</section>
+			</article>
+		</main>
+	</div>
+</Layout>
+
+<style>
+	.legal-page {
+		width: min(calc(100% - 3rem), 62rem);
+		margin: 0 auto;
+		padding: 1.25rem 0 5rem;
+	}
+
+	.legal-main {
+		padding: 5rem 0 0;
+	}
+
+	.legal-header {
+		max-width: 46rem;
+	}
+
+	.legal-updated {
+		margin: 1.25rem 0 0;
+		font-size: 0.95rem;
+		line-height: 1.6;
+		color: var(--muted-foreground);
+	}
+
+	h1 {
+		margin: 0;
+		font-size: clamp(2.5rem, 4.2vw, 3.9rem);
+		line-height: 1.05;
+		letter-spacing: -0.05em;
+		font-weight: 800;
+	}
+
+	.legal-intro,
+	.legal-content p,
+	.cookie-record p {
+		font-size: 1.05rem;
+		line-height: 1.75;
+	}
+
+	.legal-intro {
+		margin: 1.5rem 0 0;
+		color: var(--muted-foreground);
+	}
+
+	.legal-content {
+		margin-top: 3rem;
+		padding-top: 2rem;
+		border-top: 1px solid var(--border);
+	}
+
+	.legal-content section + section {
+		margin-top: 2.5rem;
+	}
+
+	h2 {
+		margin: 0 0 0.85rem;
+		font-size: 1.35rem;
+		line-height: 1.2;
+		letter-spacing: -0.03em;
+	}
+
+	h3 {
+		margin: 0;
+		font-size: 1rem;
+		line-height: 1.2;
+	}
+
+	.legal-content p,
+	.cookie-record p {
+		margin: 0;
+		max-width: 46rem;
+	}
+
+	.legal-content p + p {
+		margin-top: 1rem;
+	}
+
+	.legal-content a {
+		color: inherit;
+		font-weight: 700;
+	}
+
+	.cookie-inline-link {
+		margin-left: 0.25rem;
+	}
+
+	.cookie-records {
+		display: grid;
+		gap: 1rem;
+		margin-top: 1rem;
+	}
+
+	.cookie-record {
+		padding: 1.1rem 1.1rem 1rem;
+		border: 1px solid var(--border);
+		border-radius: 0.95rem;
+		background: var(--card);
+	}
+
+	.cookie-record-top {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-bottom: 0.65rem;
+	}
+
+	.cookie-record-label {
+		font-size: 0.88rem;
+		color: var(--muted-foreground);
+	}
+
+	.cookie-badge {
+		font-size: 0.82rem;
+		font-weight: 700;
+		color: #178b54;
+		white-space: nowrap;
+	}
+
+	code {
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: 0.92em;
+	}
+
+	@media (max-width: 720px) {
+		.legal-page {
+			width: min(calc(100% - 1.5rem), 62rem);
+			padding-top: 1rem;
+		}
+
+		.legal-main {
+			padding-top: 4rem;
+		}
+
+		.cookie-record-top {
+			flex-direction: column;
+		}
+	}
+</style>

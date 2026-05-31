@@ -32,6 +32,13 @@ const { showCta = true } = Astro.props;
 				<p>&copy; 2026 {siteConfig.name}. Sample Astro portfolio theme for presentation purposes.</p>
 				<div class="shared-footer-legal">
 					{siteConfig.legalLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+					<button
+						class="footer-cookie-btn"
+						type="button"
+						onclick="window.dispatchEvent(new CustomEvent('maria:openCookieConsent'))"
+					>
+						Cookie Preferences
+					</button>
 				</div>
 			</div>
 		</div>
