@@ -603,9 +603,9 @@ const schemaData =
 
 	.shared-footer-note {
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-end;
-		gap: 0.5rem 1rem;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 0.35rem;
 	}
 
 	.shared-footer-links {
@@ -623,15 +623,21 @@ const schemaData =
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.75rem;
+		justify-content: flex-end;
 	}
 
-	.shared-footer-legal a {
+	.shared-footer-legal a,
+	.footer-cookie-btn {
+		font-size: 0.92rem;
+		line-height: 1.4;
 		color: var(--muted-foreground);
 		text-decoration: none;
 	}
 
 	.shared-footer-legal a:hover,
-	.shared-footer-legal a:focus-visible {
+	.shared-footer-legal a:focus-visible,
+	.footer-cookie-btn:hover,
+	.footer-cookie-btn:focus-visible {
 		text-decoration: underline;
 	}
 
@@ -694,6 +700,10 @@ const schemaData =
 		}
 
 		.shared-footer-note {
+			align-items: flex-start;
+		}
+
+		.shared-footer-legal {
 			justify-content: flex-start;
 		}
 	}

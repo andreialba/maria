@@ -208,7 +208,7 @@
 
             <p class="mcc-modal-note">
               Preferences are saved in your browser's local storage and apply only to this site and browser.
-              You can reopen this panel any time from the <a href="/cookies" class="mcc-link"><strong>Cookies</strong></a> page.
+              You can reopen this panel anytime from the footer.
             </p>
           </div>
 

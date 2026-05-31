@@ -29,7 +29,6 @@ const { showCta = true } = Astro.props;
 				}
 			</div>
 			<div class="shared-footer-note">
-				<p>&copy; 2026 {siteConfig.name}. Sample Astro portfolio theme for presentation purposes.</p>
 				<div class="shared-footer-legal">
 					{siteConfig.legalLinks.map((link) => <a href={link.href}>{link.label}</a>)}
 					<button
@@ -40,6 +39,7 @@ const { showCta = true } = Astro.props;
 						Cookie Preferences
 					</button>
 				</div>
+				<p>&copy; 2026 {siteConfig.name}. Sample Astro portfolio theme for presentation purposes.</p>
 			</div>
 		</div>
 	</div>

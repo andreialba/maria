@@ -1,10 +1,11 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
-import figmaLogo from '../assets/logos/figma.svg?url';
-import framerLogo from '../assets/logos/framer.svg?url';
-import shopifyLogo from '../assets/logos/shopify.svg?url';
-import webflowLogo from '../assets/logos/webflow.svg?url';
+import figmaLogo from '../assets/logos/figma.svg';
+import framerLogo from '../assets/logos/framer.svg';
+import shopifyLogo from '../assets/logos/shopify.svg';
+import webflowLogo from '../assets/logos/webflow.svg';
 
 const tools = [
 	{ name: 'Figma', logo: figmaLogo, tone: 'light' },
@@ -106,7 +107,7 @@ const tools = [
 						tools.map((tool) => (
 							<div class="tool-card">
 								<div class:list={['tool-mark', tool.tone === 'dark' && 'tool-mark-dark']} aria-hidden="true">
-									<img class="tool-logo" src={tool.logo} alt="" loading="lazy" decoding="async" />
+									<Image class="tool-logo" src={tool.logo} alt="" loading="lazy" />
 								</div>
 								<p class="tool-name">{tool.name}</p>
 							</div>
