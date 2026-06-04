@@ -1,6 +1,6 @@
 # Maria - Astro Theme for UI/UX and Product Designers
 
-[![Maria theme preview](https://raw.githubusercontent.com/andreialba/maria/main/public/screenshot.png)](https://maria-lake.vercel.app/)
+[![Maria theme preview](https://raw.githubusercontent.com/andreialba/maria/main/public/screenshot.webp)](https://maria-lake.vercel.app/)
 
 [![Astro 6](https://img.shields.io/badge/Astro-6-FF5D01?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build/)
 [![Tailwind CSS 4](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
