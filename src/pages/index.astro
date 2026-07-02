@@ -143,6 +143,7 @@ import { projects } from '../data/projects';
 
 	.project-link {
 		display: block;
+		height: 100%;
 		color: inherit;
 		text-decoration: none;
 	}
@@ -157,7 +158,9 @@ import { projects } from '../data/projects';
 
 	.project-card {
 		display: grid;
-		gap: 1.5rem;
+		grid-template-rows: auto minmax(4.4rem, auto) 1fr;
+		gap: 1.35rem;
+		height: 100%;
 		padding: 1.5rem;
 		border-radius: 1.35rem;
 		overflow: hidden;
@@ -212,9 +215,15 @@ import { projects } from '../data/projects';
 		text-wrap: pretty;
 	}
 
+	.project-card.cyan .project-title,
+	.project-card.mint .project-title {
+		font-size: clamp(1.35rem, 1.62vw, 1.74rem);
+	}
+
 	.project-visual {
 		position: relative;
 		height: 17rem;
+		min-height: 0;
 		display: grid;
 		align-items: end;
 		justify-items: center;
@@ -450,6 +459,7 @@ import { projects } from '../data/projects';
 		}
 
 		.project-card {
+			grid-template-rows: auto auto 1fr;
 			padding: 1.25rem;
 			border-radius: 1.15rem;
 		}

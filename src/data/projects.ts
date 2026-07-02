@@ -33,7 +33,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'b.combs',
-		title: 'A CRM designed around people, relationships, and the work behind the data',
+		title: 'A CRM designed around people and the work behind the data',
 		description:
 			'A more humane CRM experience for teams balancing operational detail with relationship-driven work.',
 		background: 'cyan',
@@ -57,7 +57,7 @@ export const projects: Project[] = [
 	},
 	{
 		name: 'BoardSpeak',
-		title: 'Turning community participation into a clearer and more sustainable growth loop',
+		title: 'Turning community participation into a sustainable growth loop',
 		description:
 			'A civic product concept that makes participation feel rewarding, visible, and easier to sustain over time.',
 		background: 'mint',

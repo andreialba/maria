@@ -2,31 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.0.3] - 2026-06-14
+## [2.0.0] - 2026-07-02
 
-- Improved the mobile navigation with a full-screen menu, larger tap targets, and an expandable submenu for secondary pages.
-- Added mobile menu contact actions with email and icon-only social links.
-- Kept the mobile menu aligned with the header brand and fixed narrow-viewport overflow.
-- Locked background scrolling while the mobile menu is open and improved mobile menu accessibility with expanded states, keyboard focus containment, Escape-to-close behavior, and link-triggered closing.
+- Upgraded the theme to Astro 7.
+- Updated the Astro MDX integration, Tailwind CSS packages, Sharp, Vite, and related dependencies.
+- Regenerated the npm lockfile and resolved all reported npm vulnerabilities.
+- Equalized homepage project card heights so paired cards align more consistently.
+- Refined homepage project card layout with a reserved title band and stable preview area.
+- Shortened the b.combs and BoardSpeak project titles and tuned their homepage heading size for cleaner two-line wrapping.
+- Expanded `AGENTS.md` with broader Astro theme development, accessibility, SEO, performance, and QA guidance.
 
-## [1.0.2] - 2026-06-09
+## [1.0.0] - 2026-07-02
 
-- Updated homepage, about, resume, work, paginated work, and sample case study metadata to describe the project as an Astro theme for UI/UX designer portfolios.
-- Improved shared SEO defaults with richer structured data, support for page-specific Open Graph types, and customizable Open Graph image alt text.
-- Added page-specific structured data and `article` Open Graph metadata for the sample Nextpoint case study.
-- Made canonical URLs, `robots.txt`, and sitemap generation honor `SITE_URL` or `PUBLIC_SITE_URL` so deployments do not point back to the demo domain.
-- Excluded `noindex` legal pages from the generated sitemap.
-- Documented the new environment-based SEO URL setup in the README.
-
-## [1.0.1] - 2026-06-06
-
-- Added a project changelog for release tracking.
-- Added `AGENTS.md` with repo-specific guidance for future contributors and coding agents.
-- Fixed the brief font flash on page load by preloading the self-hosted Manrope font and using a custom `@font-face` declaration with a less jarring display strategy.
-
-## [1.0.0] - 2026-06-04
-
-- Initial release of the Maria Astro portfolio theme.
+- Initial stable release of the Maria Astro portfolio theme.
 - Added the homepage, work listing, case study, about, resume, privacy, terms, cookies, and 404 pages.
 - Added shared site configuration, SEO defaults, structured data, sitemap generation, and `robots.txt`.
-- Added persistent light and dark mode, cookie consent UI, and responsive portfolio assets.
+- Added persistent light and dark mode, cookie consent UI, responsive portfolio assets, and self-hosted Manrope font loading.
+- Added mobile navigation improvements, accessible menu behavior, and contributor guidance.

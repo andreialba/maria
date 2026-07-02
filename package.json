@@ -2,7 +2,7 @@
   "name": "maria-astro-theme",
   "description": "A clean Astro portfolio theme for UX designers and product designers.",
   "type": "module",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "author": "Andrei Alba",
   "license": "MIT",
   "keywords": [
@@ -28,12 +28,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^6.0.1",
+    "@astrojs/mdx": "^7.0.1",
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource-variable/manrope": "^5.2.8",
-    "@tailwindcss/vite": "^4.3.0",
-    "astro": "^6.4.0",
-    "sharp": "^0.34.5",
-    "tailwindcss": "^4.3.0"
+    "@tailwindcss/vite": "^4.3.2",
+    "astro": "^7.0.5",
+    "sharp": "^0.35.3",
+    "tailwindcss": "^4.3.2"
   }
 }
